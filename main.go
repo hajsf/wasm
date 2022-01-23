@@ -36,5 +36,5 @@ func main() {
 
 // compile to wasm:
 // GOOS=js GOARCH=wasm go build -o www/wasm/main.wasm github.io/hajsf/wasm
-// Copied the wasm_exec.js file to the same working folder as:
+// Copy the wasm_exec.js file to the same working folder as:
 // cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ./wasm
