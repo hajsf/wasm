@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WASM</title>
+    <!-- Sqlite WASM -->
+    <script src='http://localhost:8080/www/sql/sql-wasm.js'></script>
+    <!-- WASM -->
+    <script src="http://localhost:8080/www/wasm/wasm_exec.js"></script>
+    <script src="http://localhost:8080/www/wasm/loadWasm.js"></script>
+    <script>
+        (async () => {
+            await init();
+            alert("Wasm had been loaded")
+           // console.log(multiply(5, 3));
+        })().catch(e => {
+            console.log(e);
+        }); 
+    
+    /***** OR ****
+        (async () => {
+            try {
+                await init();
+                alert("Wasm had been loaded")
+                console.log(multiply(5, 3));
+            } catch (e) {
+                console.log(e);
+            } 
+        })();
+    *************/
+    </script>
+    <!-- JAVASCRIPT-->
+    <script src="http://localhost:8080/www/lib.js"></script>
+    <script src="http://localhost:8080/www/sql.js"></script>
+
+</head>
+<body>
+</body>
+<script>
+   // console.log("Sub 5 & 3: "+sub(5,3));
+ </script>
+</html>
