@@ -4,3 +4,10 @@ To clear the VC code error "could not import syscall/js", we have to change vs c
 2. Select Workspace (not user), so that the changes be applicablefor this folder only, not for all GO projects
 3. Search "go tools env"
 4. Under "Go: Tools Env Vars" click "Edit in settings.json" 
+5. Write below in the json:
+{
+  "go.toolsEnvVars": {
+    "GOOS": "js",
+    "GOARCH": "wasm",
+  }
+}
