@@ -16,6 +16,7 @@
         (async () => {
             await init();
             alert("Wasm had been loaded")
+            alert(window.navigator.platform)
            // console.log(multiply(5, 3));
         })().catch(e => {
             console.log(e);

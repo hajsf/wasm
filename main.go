@@ -1,6 +1,7 @@
 package main
 
 import (
+	"runtime"
 	"syscall/js"
 )
 
@@ -18,9 +19,11 @@ func multiply(x, y int) int {
 
 func main() {
 	c := make(chan int) // channel to keep the wasm running, it is not a library as in rust/c/c++, so we need to keep the binary running
+	os := runtime.GOOS
 	js.Global().Set("sub", js.FuncOf(sub))
 	alert := js.Global().Get("alert")
-	alert.Invoke("Hi")
+	platform := js.Global().Get("window.navigator.platform")
+	alert.Invoke(os + " running at " + platform.String())
 	println("Hello wasm")
 
 	num := js.Global().Call("add", 3, 4)
@@ -35,6 +38,6 @@ func main() {
 }
 
 // compile to wasm:
-// GOOS=js GOARCH=wasm go build -o www/wasm/main.wasm github.io/hajsf/wasm
+// GOOS=js GOARCH=wasm go build -o www/wasm/app/main.wasm github.io/hajsf/wasm
 // Copy the wasm_exec.js file to the same working folder as:
 // cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ./wasm

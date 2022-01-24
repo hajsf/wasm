@@ -8,7 +8,7 @@ config = {
     //Create the database
     const db = new SQL.Database();
     // Run a query without reading the results
-    db.run("CREATE TABLE test (col1, col2);");
+    db.run("CREATE TABLE IF NOT EXISTS test (col1, col2);");
     // Insert two rows: (1,111) and (2,222)
     db.run("INSERT INTO test VALUES (?,?), (?,?)", [1,111,2,222]);
 
