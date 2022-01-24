@@ -1,4 +1,4 @@
-const SQLpath = '/www/sql';
+const SQLpath = '/www/wasm/sql';
 config = {
     locateFile: filename => `${SQLpath}/sql-wasm.wasm`
   }
